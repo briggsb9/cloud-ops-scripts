@@ -5,7 +5,14 @@ $PolicyExemptionDesc = "These VMs are exempt from endpoint protection checks"
 $PolicyExemptionDisplayName = "Endpoint protection exemption - $Date"
 $PolicyExemptionCategory = "waiver"
 $ExpireOn = "2023-12-23T00:00:00"
-#$PolicyExemptionMetadata = "RequestedBy=ts" "ApprovedBy=azsec" "ApprovedOn=18/07/2022" "TicketRef=123456789"
+$PolicyExemptionMetadata = @"
+{
+    "RequestedBy":"ts", 
+    "ApprovedBy":"azsec", 
+    "ApprovedOn":"18/07/2022", 
+    "TicketRef":"123456789"
+}
+"@
 $PolicyAssignmentName = "fa57ee6c7928459e927993df"
 $ManagementGroupID = "198d43e1-63f3-4d39-87bd-9a99b4598f8b"
 # policy definition reference id is only needed for policy initiative
@@ -23,5 +30,5 @@ New-AzPolicyExemption -name $PolicyExemptionName `
                         -ExpiresOn $ExpireOn `
                         -PolicyAssignment $PolicyAssignment `
                         -PolicyDefinitionReferenceId $PolicyDefinitionReferenceId `
-                        -Scope $PolicyExemptionScope
-                        #-Metadata $PolicyExemptionMetadata[@] `
+                        -Scope $PolicyExemptionScope `
+                        -Metadata $PolicyExemptionMetadata
