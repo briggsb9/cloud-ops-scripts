@@ -4,9 +4,9 @@
 
 # User variables - Replace example values as needed
 
-$ResourceIDs = @( # This bit could be improved by accepting a list from a txt/csv file
-    "/subscriptions/c624c6dc-826d-47e9-879a-d1ec7af0c4e1/resourceGroups/dns/providers/Microsoft.Compute/virtualMachines/vm9345345",
-    "/subscriptions/293a7d3d-e947-4510-a3d5-a618c3657b84/resourceGroups/migrate-test/providers/Microsoft.Compute/virtualMachines/migrateSource"
+$ResourceIDs = @( # This could be improved by accepting a list from a txt/csv file
+    "/subscriptions/YOUR-SUBSCRIPTION-ID/resourceGroups/YOUR-RESOURCEGROUP-NAME/providers/Microsoft.Compute/virtualMachines/YOUR-RESOURCE-NAME",
+    "/subscriptions/YOUR-SUBSCRIPTION-ID/resourceGroups/YOUR-RESOURCEGROUP-NAME/providers/Microsoft.Compute/virtualMachines/YOUR-RESOURCE-NAME"
 )
 $Date = Get-Date -Format "MM-dd-yyyy-HH-mm-ss"
 $PolicyExemptionDisplayNamePrefix = "Endpoint protection exemption"
