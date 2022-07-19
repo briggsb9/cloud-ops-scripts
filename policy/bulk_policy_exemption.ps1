@@ -1,4 +1,4 @@
-# Example script to create policy exemptions from a list of Resource IDs. 
+# Example script to create NEW policy exemptions from a list of Resource IDs. Does not yet find and update existing exemptions.
 # Usefull when bulk adding resources that belong to multiple subscriptions and/or resource groups. 
 # Note: similar functionality available manually in the portal
 
@@ -29,7 +29,7 @@ $PolicyDefinitionReferenceId = "installEndpointProtection" # Policy definition r
 # Get the Policy Assignment
 $PolicyAssignment = Get-AzPolicyAssignment -Name $PolicyAssignmentName -Scope "/providers/Microsoft.Management/managementGroups/$ManagementGroupID"
 
-# Loop through each resource and create exemptions
+# Loop through each resource and create NEW exemptions
 foreach ($ResourceID in $ResourceIDs) {
 
     $ResourceName = $resourceid.split('/')[-1]
